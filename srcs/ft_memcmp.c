@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:33:24 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/05 14:11:39 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/05 14:15:57 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	unsigned char	*ss1;
 	unsigned char	*ss2;
-	size_t				i;
+	size_t			i;
 
 	i = 0;
 	ss1 = (unsigned char *)s1;

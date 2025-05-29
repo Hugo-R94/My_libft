@@ -6,13 +6,13 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:32:56 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/02 12:02:43 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:21:07 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	nb_digits(int n)
+static	int	nb_digits(int n)
 {
 	int			digits;
 	long int	nb;
@@ -61,6 +61,8 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
+// #include <stdio.h>
+
 // int	main(void)
 // {
 // 	int i = 0;
@@ -69,5 +71,17 @@ char	*ft_itoa(int n)
 // 	while (i < 5)
 // 		printf("%s\n", ft_itoa(tab[i++]));
 
+// 	return 0;
+// }
+
+// int	main(void)
+// {
+// 	int i = -2147483648;
+
+// 	while (i < 2147483647)
+// 	{
+// 		printf("%s\n", ft_itoa(i));
+// 		i++;
+// 	}
 // 	return 0;
 // }

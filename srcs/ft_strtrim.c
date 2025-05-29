@@ -6,13 +6,13 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:37:00 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/02 12:03:57 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:05:57 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isinset(char c, const char *set)
+static	int	ft_isinset(char c, const char *set)
 {
 	while (*set)
 	{
@@ -51,10 +51,12 @@ char	*ft_strtrim(const char *s1, const char *set)
 	return (trimmed);
 }
 
+// #include <stdio.h>
+
 // int		main(void)
 // {
 // 	char 	*charset = " \n\t\v\f ";
 // 	char 	*s1 = "\t \n\n \t\t \n\n\nHello \t  Please\n \t\n";
 // 	printf("%s\n", ft_strtrim(s1,charset));
 // 	return (0);
-// }
+// }	

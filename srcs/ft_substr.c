@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 11:33:47 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/02 12:04:01 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:01:56 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (str);
 }
 
+// #include <stdio.h>
+// #include <string.h>
 // int main()
 // {
 // 	int start = 7;
@@ -51,16 +53,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 // 	if (str == strsub)
 // 		printf("\nA new string was not returned");
 // }
-//
-//
+
 // int	main(void)
 // {
 // 	char const	*s = "lorem ipsum dolor sit amet";
 // 	unsigned int	start = 7;
 // 	size_t	len = 10;
-//
+
 // 	printf("start index: %d\nsubstring length: %zu\n", start, len );
 // 	printf("string: %s\nft_substr: %s\n", s, ft_substr(s, start, len));
+// 	//printf("string: %s\nsubstr: %d\n", s, substr(s, start, len));
 // }
 
 // int main()

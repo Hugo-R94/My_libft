@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:35:39 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/02 15:19:20 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/07 10:59:07 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *source)
 	str_dup = (char *)malloc((size_source * sizeof(char)) + 1);
 	if (!str_dup)
 		return (NULL);
-	while (i <= size_source)
+	while (i < size_source)
 	{
 		str_dup[i] = source[i];
 		i++;
@@ -31,6 +31,32 @@ char	*ft_strdup(const char *source)
 	str_dup[i] = '\0';
 	return (str_dup);
 }
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+
+// char	*ft_strdup(const char *source); // ta fonction
+
+// int	main(void)
+// {
+// 	char *s;
+// 	char *copy;
+
+// 	s = "Hello, World!";
+// 	copy = ft_strdup(s);
+// 	printf("Original : %s\n", s);
+// 	printf("Duplicate: %s\n", copy);
+// 	free(copy);
+
+// 	s = "";
+// 	copy = ft_strdup(s);
+// 	printf("Empty: %s\n", copy);
+// 	free(copy);
+
+// 	// Ne surtout pas faire : s = NULL; ft_strdup(s); -> undefined behavior
+// 	return (0);
+// }
 
 // int main()
 // {

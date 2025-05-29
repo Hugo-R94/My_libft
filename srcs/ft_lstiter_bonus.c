@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstiter_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/05 14:17:29 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/05 14:21:17 by hrouchy          ###   ########.fr       */
+/*   Created: 2025/04/28 10:32:56 by hrouchy           #+#    #+#             */
+/*   Updated: 2025/05/05 13:48:34 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char *str)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	index;
+	t_list	*tmp;
 
-	index = 0;
-	while (str[index])
+	tmp = lst;
+	if (tmp == NULL)
+		return ;
+	while (tmp != NULL)
 	{
-		ft_putchar(str[index]);
+		f(tmp->content);
+		tmp = tmp->next;
 	}
 }

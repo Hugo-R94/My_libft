@@ -6,20 +6,20 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 12:06:20 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/05 11:39:38 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:07:15 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free(char **str, int index)
+static	void	ft_free(char **str, int index)
 {
 	while (--index >= 0)
 		free(str[index]);
 	free(str);
 }
 
-int	ft_count_words(char *str, char sep)
+static int	ft_count_words(char *str, char sep)
 {
 	int	index;
 	int	count;
@@ -43,30 +43,43 @@ int	ft_count_words(char *str, char sep)
 	return (count);
 }
 
-int	ft_splitcpy(char *str, int index, char sep, char **str_arr)
+static char	*allocate_word(char *str, char sep)
 {
-	int	size;
-	int	i;
+	int		size;
+	char	*word;
+	int		i;
 
+	size = 0;
+	while (str[size] && str[size] != sep)
+		size++;
+	word = malloc(size + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < size)
+		word[i++] = *str++;
+	word[i] = '\0';
+	return (word);
+}
+
+static int	ft_splitcpy(char *str, int index, char sep, char **str_arr)
+{
 	while (*str)
 	{
 		while (*str && *str == sep)
 			str++;
-		if (!*str)
-			break ;
-		size = 0;
-		while (str[size] && str[size] != sep)
-			size++;
-		str_arr[index] = malloc(size + 1);
-		if (!str_arr[index])
+		if (*str)
 		{
-			ft_free(str_arr, index);
-			return (0);
+			str_arr[index] = allocate_word(str, sep);
+			if (!str_arr[index])
+			{
+				ft_free(str_arr, index);
+				return (0);
+			}
+			while (*str && *str != sep)
+				str++;
+			index++;
 		}
-		i = 0;
-		while (i < size)
-			str_arr[index][i++] = *str++;
-		str_arr[index++][i] = '\0';
 	}
 	str_arr[index] = NULL;
 	return (1);
@@ -77,6 +90,8 @@ char	**ft_split(char *str, char c)
 	char	**split_array;
 	int		index;
 
+	if (!str)
+		return (NULL);
 	index = 0;
 	split_array = malloc((ft_count_words(str, c) + 1) * sizeof(char *));
 	if (!split_array)
@@ -86,14 +101,15 @@ char	**ft_split(char *str, char c)
 	return (split_array);
 }
 
+// #include <stdio.h>
 // int	main(void)
 // {
 // 	char **splitresult;
-// 	char 	*tosplit = "      le la lo li lililo                       ";
+// 	char 	*tosplit = "";
 // 	char	sep = ' ';
 // 	int index = 0;
 // 	printf("count words = %i\n",ft_count_words(tosplit,sep));
-// 	splitresult = ft_split("hello!", ' ');
+// 	splitresult = ft_split(tosplit, ' ');
 // 	while (splitresult[index] != NULL)
 // 	{
 // 		printf("%s\n",splitresult[index]);

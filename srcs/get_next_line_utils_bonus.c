@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 16:54:12 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/13 11:03:29 by hrouchy          ###   ########.fr       */
+/*   Created: 2025/05/19 10:53:35 by hrouchy           #+#    #+#             */
+/*   Updated: 2025/05/26 10:51:02 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line_bonus.h"
 
-static	char	*ft_strcat(char *dest, const char *src)
+int	ft_strlen(const char *str)
+{
+	int	i;	
+
+	i = 0;
+	while (str[i])
+	{
+		i++;
+	}
+	return (i);
+}
+
+char	*ft_strcat(char *dest, const char *src)
 {
 	int	i;
 	int	e;
 
 	i = 0;
 	e = 0;
+	if (!dest || !src)
+	{
+		return (NULL);
+	}
 	while (dest[i] != '\0')
+	{
 		i++;
+	}
 	while (src[e] != '\0')
 	{
 		dest[i] = src[e];
@@ -35,7 +53,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str_join;
 
-	if (s1 == NULL || s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
 	str_join = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (!str_join)
@@ -46,11 +64,25 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str_join);
 }
 
-// #include <stdio.h>
+char	*ft_strchr(const char *s, int c)
+{
+	int	index;
 
-// int	main(void)
-// {
-//     char *str1 = "lorem ipsum ";
-//     char *str2 = "dolor sit amet";
-// 	printf("%s", ft_strjoin(str1,str2));
-// }
+	index = 0;
+	while (s[index])
+	{
+		if (s[index] == c)
+			return ((char *)&s[index]);
+		index++;
+	}
+	return (NULL);
+}
+
+char	*ft_free(char *buffer, char *buf)
+{
+	char	*temp;
+
+	temp = ft_strjoin(buffer, buf);
+	free(buffer);
+	return (temp);
+}

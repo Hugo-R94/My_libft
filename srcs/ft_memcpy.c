@@ -6,15 +6,15 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/28 10:33:34 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/05 11:39:17 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 10:54:41 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, int size)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
-	int				index;
+	size_t			index;
 	unsigned char	*source;
 	unsigned char	*destination;
 
@@ -31,29 +31,27 @@ void	*ft_memcpy(void *dest, const void *src, int size)
 	return (destination);
 }
 
-// int main() {
-//     char src[20] = "memmove test";
-//     char *dest1 = 0;
-//     char *dest2 = 0;
-
-//     int size = 5;
-
+// #include <stdio.h>
+// #include <string.h>
+// #include <unistd.h>
+// int main() 
+// {
+//     char src[20] = "sssfrgwrgfdsg";
+//     char dest1[] = "";
+//     char dest2[] = "";
+//     int size = 10;
 //     // // Test avec la fonction standard
-//     memcpy(((void*)0), ((void*)0), size);
-
+//     memcpy(dest1, src, size);
 //     // Test avec ft_memmove
-//     ft_memcpy(((void*)0), ((void*)0), size);
-
+//     ft_memcpy(dest2, src, size);
 //     // Affichage des résultats
-//     printf("memmove   : %s\n", dest1);
-//     printf("ft_memmove: %s\n", dest2);
-
+//     printf("memcpy   : %s\n", dest1);
+//     printf("ft_memcpy: %s\n", dest2);
 //     // Vérification avec memcmp
 //     if (memcmp(dest1, dest2, size) == 0) {
 //         printf("✅ Les deux memcpy donnent le même résultat !\n");
 //     } else {
 //         printf("❌ Il y a une différence entre memcpy et ft_memcpy !\n");
 //     }
-
 //     return 0;
 // }

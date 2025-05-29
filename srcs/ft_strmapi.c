@@ -6,18 +6,11 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 13:07:29 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/04/28 17:51:50 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/13 11:40:58 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	to_upper(char c)
-{
-	if (c >= 'a' && c <= 'z')
-		c = c - 32;
-	return (c);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -37,25 +30,30 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (new_str);
 }
 
+// char ft_to_upper(unsigned int i, char c)
+// {
+//     (void)i; 
+//     if (c >= 'a' && c <= 'z')
+//         return c - 32;
+//     return c;
+// }
+
+// #include <stdio.h>
+
 // int main(int argc, char **argv)
 // {
-// 	int	index = 1;
-// 	if (argc < 0)
-// 		return(0);
-// 	while (index < argc)
-// 	{
-// 		printf("%s", ft_strmapi(argv[index], to_upper));
-// 		printf(" ");
-// 		index++;
-// 	}
-// }
-// int main()
-// {
-// 	strcpy(str, "LoReM iPsUm");
-//     strmapi = ft_strmapi(str, &mapi);
-//     ft_print_result(strmapi);
-//     if (strmapi == str)
-//         ft_print_result("\nA new string was not returned");
-//     if (strmapi[11] != '\0')
-//         ft_print_result("\nString is not null terminated");
+//     if (argc < 2)
+//         return 0;
+
+//     for (int index = 1; index < argc; index++)
+//     {
+//         char *upper_str = ft_strmapi(argv[index], ft_to_upper);
+//         if (upper_str)
+//         {
+//             printf("%s ", upper_str);
+//             free(upper_str);
+//         }
+//     }
+//     printf("\n");
+//     return 0;
 // }

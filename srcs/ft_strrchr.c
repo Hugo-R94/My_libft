@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 11:30:52 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/02 12:03:50 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/05/07 10:59:12 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strrchr(const char *s, int c)
 		index++;
 	}
 	if ((unsigned char)s[index] == (unsigned char)c)
-			buffer = (char *)&s[index];
+		buffer = (char *)&s[index];
 	if (buffer == NULL)
 		return (NULL);
 	else
