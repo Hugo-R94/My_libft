@@ -1,12 +1,25 @@
-#include "ft_printf.h"
-#include "get_next_line_bonus.h"
+#include "headers/libft.h" // ou un header contenant le prototype de ft_print_bit
+#include <stdio.h> // optionnel, pour debug
 
-int main()
+// int main(void)
+// {
+// 	unsigned char i = ft_swap_bits(53); // 55 = 0b00110111
+// 	ft_print_bit(i);  // affiche 4 bits inversés avec les 4 autres
+// 	return (0);
+// }
+int main(void)
 {
-	ft_printf("%s\n","chaussettes");
-	ft_putstr("chaussettes\n");
-	int fd = open("texte.txt",O_RDONLY);
-	char *line ;
-	line = get_next_line(fd);
-	ft_printf("%s\n",line);
+    unsigned char val = 55; // 0b00110111
+    unsigned char reversed = ft_reverse_bits(val);
+
+    ft_printf("Original bits: ");
+    ft_print_bit(val);
+    ft_printf("\nReversed bits: ");
+    ft_print_bit(reversed);
+    ft_printf("\n");
+
+    ft_printf("Original decimal: %d\n", val);
+    ft_printf("Reversed decimal: %d\n", reversed);
+
+    return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 11:05:30 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/22 15:53:24 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/02 11:48:29 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 10
-# endif
 
-# ifndef OPEN_MAX
-#  define OPEN_MAX 1024
-# endif
 
 char	*get_next_line(int fd);
 char	*ft_read(int fd, char *static_str);

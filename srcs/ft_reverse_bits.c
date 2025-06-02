@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
+/*   ft_reverse_bits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 10:32:56 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/05 13:48:33 by hrouchy          ###   ########.fr       */
+/*   Created: 2025/06/02 11:20:54 by hrouchy           #+#    #+#             */
+/*   Updated: 2025/06/02 11:23:27 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+unsigned char	ft_reverse_bits(unsigned char octet)
 {
-	if (!del || !lst)
-		return ;
-	else
+	int				idx;
+	unsigned char	bit;
+
+	idx = 8;
+	while (idx--)
 	{
-		del(lst->content);
-		free(lst);
+		bit = ((bit * 2) + (octet % 2));
+		octet /= 2;
 	}
+	return (bit);
 }

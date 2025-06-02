@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 11:26:03 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/29 12:10:24 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/02 11:49:20 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,8 @@ int		ft_idformat(va_list args, char *str, int index);
 int		ft_puthexa(unsigned long int nb, bool up);
 int		ft_putptr(void *ptr);
 int		ft_putunsigned(int nb);
+void	ft_print_bit(unsigned char octet);
+unsigned char	ft_swap_bits(unsigned char octet);
+unsigned char	ft_reverse_bits(unsigned char octet);
 
 #endif
