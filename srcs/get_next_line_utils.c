@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 10:53:35 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/13 16:28:09 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 17:37:19 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	*ft_strchr_gnl(const char *s, int c)
 {
 	int	index;
 
+	if (!s)
+		return (NULL);
 	index = 0;
 	while (s[index])
 	{

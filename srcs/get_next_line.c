@@ -6,17 +6,22 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 10:53:17 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/13 16:28:59 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 17:38:25 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int OP)
 {
 	static char	*static_str;
 	char		*line;
 
+	if (OP == 1)
+	{
+		free(static_str);
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
 	if (read(fd, 0, 0) == -1)
@@ -60,6 +65,8 @@ char	*ft_read(int fd, char *static_str)
 	if (!static_str)
 		static_str = ft_calloc_gnl(BUFFER_SIZE, 1);
 	buffer = ft_calloc_gnl((BUFFER_SIZE + 2), sizeof(char));
+	if (!buffer)
+		return (NULL);
 	nbytes = 1;
 	while (nbytes > 0 && !ft_strchr_gnl(buffer, '\n'))
 	{
@@ -119,6 +126,8 @@ char	*ft_clean(char *static_str)
 		return (NULL);
 	}
 	new_static = ft_calloc_gnl((ft_strlen_gnl(static_str) - i), sizeof(char));
+	if (!new_static)
+		return (NULL);
 	i++;
 	while (static_str[i])
 		new_static[j++] = static_str[i++];
