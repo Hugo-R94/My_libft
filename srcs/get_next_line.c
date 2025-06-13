@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 10:53:17 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/26 10:50:56 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 16:28:59 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc_gnl(size_t nmemb, size_t size)
 {
 	char	*str;
 	size_t	index;
@@ -58,10 +58,10 @@ char	*ft_read(int fd, char *static_str)
 	int		nbytes;
 
 	if (!static_str)
-		static_str = ft_calloc(BUFFER_SIZE, 1);
-	buffer = ft_calloc((BUFFER_SIZE + 2), sizeof(char));
+		static_str = ft_calloc_gnl(BUFFER_SIZE, 1);
+	buffer = ft_calloc_gnl((BUFFER_SIZE + 2), sizeof(char));
 	nbytes = 1;
-	while (nbytes > 0 && !ft_strchr(buffer, '\n'))
+	while (nbytes > 0 && !ft_strchr_gnl(buffer, '\n'))
 	{
 		nbytes = read(fd, buffer, BUFFER_SIZE);
 		if (nbytes == -1)
@@ -88,7 +88,7 @@ char	*ft_line(char *statict_str)
 		return (NULL);
 	while (statict_str[index] && statict_str[index] != '\n')
 		index++;
-	line = ft_calloc((index + 2), sizeof(char));
+	line = ft_calloc_gnl((index + 2), sizeof(char));
 	if (!line)
 		return (NULL);
 	index = 0;
@@ -118,7 +118,7 @@ char	*ft_clean(char *static_str)
 		free(static_str);
 		return (NULL);
 	}
-	new_static = ft_calloc((ft_strlen(static_str) - i), sizeof(char));
+	new_static = ft_calloc_gnl((ft_strlen_gnl(static_str) - i), sizeof(char));
 	i++;
 	while (static_str[i])
 		new_static[j++] = static_str[i++];

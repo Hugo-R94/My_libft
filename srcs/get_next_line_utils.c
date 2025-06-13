@@ -6,13 +6,13 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/19 10:53:35 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/05/26 10:50:59 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 16:28:09 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int	ft_strlen(const char *str)
+int	ft_strlen_gnl(const char *str)
 {
 	int	i;	
 
@@ -24,7 +24,7 @@ int	ft_strlen(const char *str)
 	return (i);
 }
 
-char	*ft_strcat(char *dest, const char *src)
+char	*ft_strcat_gnl(char *dest, const char *src)
 {
 	int	i;
 	int	e;
@@ -49,22 +49,22 @@ char	*ft_strcat(char *dest, const char *src)
 	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin_gnl(char const *s1, char const *s2)
 {
 	char	*str_join;
 
 	if (!s1 || !s2)
 		return (NULL);
-	str_join = malloc(ft_strlen(s1) + ft_strlen(s2)+1);
+	str_join = malloc(ft_strlen_gnl(s1) + ft_strlen_gnl(s2)+1);
 	if (!str_join)
 		return (NULL);
 	str_join[0] = '\0';
-	ft_strcat(str_join, s1);
-	ft_strcat(str_join, s2);
+	ft_strcat_gnl(str_join, s1);
+	ft_strcat_gnl(str_join, s2);
 	return (str_join);
 }
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr_gnl(const char *s, int c)
 {
 	int	index;
 
@@ -82,7 +82,7 @@ char	*ft_free(char *buffer, char *buf)
 {
 	char	*temp;
 
-	temp = ft_strjoin(buffer, buf);
+	temp = ft_strjoin_gnl(buffer, buf);
 	free(buffer);
 	return (temp);
 }

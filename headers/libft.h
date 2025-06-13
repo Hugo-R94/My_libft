@@ -6,7 +6,7 @@
 /*   By: hrouchy <hrouchy@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 11:26:03 by hrouchy           #+#    #+#             */
-/*   Updated: 2025/06/02 11:49:20 by hrouchy          ###   ########.fr       */
+/*   Updated: 2025/06/13 16:17:49 by hrouchy          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_printf.h"
+# include "get_next_line.h"
+
+
 
 typedef struct s_list
 {
